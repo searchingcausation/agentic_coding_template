@@ -19,7 +19,8 @@ Keep this file concise and current.
 
 Current goal: establish a reusable controlled agentic coding template.
 
-Current task: initial template files have been created.
+Current task: Python placeholder files have been removed so the repository stays focused
+on agentic coding workflow guidance.
 
 Current working mode: Implement
 
@@ -31,6 +32,7 @@ Implemented:
 - human usage guide: `README.md`
 - project memory files: `continuity.md`, `decisions.md`, `context.md`
 - repo-local workflow instructions under `skills/`
+- no application/runtime scaffold; this template is documentation/workflow-only
 
 Not implemented:
 
@@ -146,4 +148,3 @@ Open eval gaps:
 - approval gates
 - public API/schema/prompt/model behavior rules
 - testing rule that normal unit tests must not require live external calls
-
