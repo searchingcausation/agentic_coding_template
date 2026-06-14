@@ -11,8 +11,8 @@ steps, open questions, known issues, and temporary assumptions.
 
 Current goal: maintain a reusable controlled agentic coding template.
 
-Current task: the template documentation has been reduced so `AGENTS.md` is the
-central rule source and the supporting files stay lightweight.
+Current task: repo-understanding workflows are being added so agents can explore an
+unfamiliar codebase and test the user's mental model before planning changes.
 
 Current working mode: Implement
 
@@ -24,6 +24,7 @@ Implemented:
 - `README.md` as the human usage guide
 - `context.md`, `continuity.md`, and `decisions.md` as concise project memory files
 - repo-local workflows under `skills/`
+- read-only repo-understanding workflows: `repo-tour` and `grill-me`
 - no application/runtime scaffold; this repository is documentation/workflow-only
 
 Not implemented:

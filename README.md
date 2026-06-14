@@ -14,6 +14,8 @@ documentation, and review.
 - `continuity.md`: short-term project memory
 - `decisions.md`: durable technical decisions
 - `skills/clarify/SKILL.md`: clarify vague, risky, broad, or underspecified work
+- `skills/repo-tour/SKILL.md`: explore an unfamiliar repo without editing files
+- `skills/grill-me/SKILL.md`: test and strengthen your understanding of a repo
 - `skills/plan/SKILL.md`: plan non-trivial work before implementation
 - `skills/implement/SKILL.md`: implement approved plans or small safe changes
 - `skills/review/SKILL.md`: review diffs, scope, risks, and verification
@@ -24,6 +26,20 @@ At the start of a new agent session, ask the agent to read:
 
 ```text
 Read AGENTS.md, continuity.md, context.md, and the relevant workflow file in skills/.
+```
+
+For a new or unfamiliar repo:
+
+```text
+Use skills/repo-tour/SKILL.md. Do not edit files.
+Map the repo and explain the main execution path.
+```
+
+To check your understanding:
+
+```text
+Use skills/grill-me/SKILL.md. Do not edit files.
+Ask one question at a time about architecture, data flow, entry points, tests, and failure modes.
 ```
 
 For unclear work:
@@ -62,11 +78,13 @@ Review the current diff critically for correctness, scope creep, and missing ver
 For non-trivial changes:
 
 1. Clarify the goal.
-2. Plan the smallest useful vertical slice.
-3. Ask for explicit approval.
-4. Implement only the approved scope.
-5. Review the result.
-6. Update or explicitly skip project memory/docs.
+2. Explore the repo when the codebase is unfamiliar.
+3. Test understanding when the mental model is uncertain.
+4. Plan the smallest useful vertical slice.
+5. Ask for explicit approval.
+6. Implement only the approved scope.
+7. Review the result.
+8. Update or explicitly skip project memory/docs.
 
 Small, low-risk changes can be made directly when the task is clear, but they should
 be mentioned in the final response.

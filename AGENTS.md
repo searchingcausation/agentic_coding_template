@@ -81,6 +81,8 @@ evaluation.
 The files in `skills/` are repo-local workflow instructions.
 
 - `skills/clarify/SKILL.md`: vague, broad, risky, architectural, or underspecified tasks
+- `skills/repo-tour/SKILL.md`: read-only exploration of an unfamiliar repository
+- `skills/grill-me/SKILL.md`: read-only interview to test the user's repo understanding
 - `skills/plan/SKILL.md`: clear non-trivial goals that need approval before coding
 - `skills/implement/SKILL.md`: approved plans or clearly small implementation tasks
 - `skills/review/SKILL.md`: review, critique, pre-merge checks, or scope checks
