@@ -18,7 +18,7 @@ Small low-risk changes may be implemented directly only when no hard stop in
 - implementation scope is clear
 - a small vertical slice can be implemented
 - a bug fix has a clear local target
-- tests or verification are known
+- tests or verification are known or can be discovered from repo context
 
 ## Process
 
@@ -29,8 +29,9 @@ Small low-risk changes may be implemented directly only when no hard stop in
 5. Keep unrelated files untouched.
 6. Run available checks or explain why they were not run.
 7. Stop if scope expands unexpectedly.
-8. Check whether `continuity.md`, `decisions.md`, `context.md`, or `README.md` need updates.
-9. Summarize changes, verification, and memory/docs updates.
+8. For non-trivial work, check whether `continuity.md`, `decisions.md`,
+   `context.md`, or `README.md` need updates.
+9. Summarize changes, verification, and any memory/docs updates.
 
 ## Rules
 
@@ -48,7 +49,7 @@ Use a compact summary:
 - changed files
 - what changed
 - verification run or not run
-- memory/docs updates made or skipped, with brief reasons
+- for non-trivial work, memory/docs updates made or skipped, with brief reasons
 - remaining risks or notes
 - suggested commit message
 

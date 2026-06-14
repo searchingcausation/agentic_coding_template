@@ -13,6 +13,9 @@ This workflow is read-only. Do not edit files.
 
 ## Process
 
+For a narrow lookup question, answer the specific question with only the context needed
+to avoid guessing. Use the full tour shape for broad repository-understanding requests.
+
 1. Inspect the repo structure with fast file search.
 2. Read the project docs and agent instructions first.
 3. Identify main entry points, important folders, configs, and tests.
@@ -23,7 +26,7 @@ This workflow is read-only. Do not edit files.
 
 ## Output
 
-Use a compact structure:
+For broad tours, use a compact structure:
 
 - project purpose in plain English
 - main entry points

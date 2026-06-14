@@ -11,8 +11,8 @@ steps, open questions, known issues, and temporary assumptions.
 
 Current goal: maintain a reusable controlled agentic coding template.
 
-Current task: final-response guidance is being updated so agents include a suggested
-commit message after making file changes.
+Current task: none active; latest update tightened local skill guidance to reduce
+avoidable friction.
 
 Current working mode: Implement
 
@@ -26,6 +26,9 @@ Implemented:
 - repo-local workflows under `skills/`
 - read-only repo-understanding workflows: `repo-tour` and `grill-me`
 - final responses after file changes include a suggested commit message
+- `implement` accepts verification that can be discovered from repo context
+- `implement` limits memory/docs checks to non-trivial work
+- `repo-tour` can answer narrow lookup questions without a full repository tour
 - no application/runtime scaffold; this repository is documentation/workflow-only
 
 Not implemented:
