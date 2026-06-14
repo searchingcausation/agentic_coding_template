@@ -1,24 +1,22 @@
 # Agentic Coding Template
 
-This repository is a reusable template for controlled AI-assisted coding.
+A reusable template for controlled AI-assisted coding.
 
-It is designed for projects where the human owns architecture and long-term technical
-direction, while agents help with clarification, planning, implementation, debugging,
+The template is intentionally conservative: small steps, explicit approval for
+non-trivial changes, and no silent architecture decisions. The human owns long-term
+direction; agents help with clarification, planning, implementation, debugging,
 documentation, and review.
-
-The default posture is intentionally conservative: small steps, explicit plans, and no
-silent architecture decisions.
 
 ## Files
 
-- `AGENTS.md`: agent rules, approval gates, hard stops, and workflow routing
-- `context.md`: stable project background and reusable AI/LLM project assumptions
-- `continuity.md`: short-term project memory for future agent sessions
+- `AGENTS.md`: central agent rules, approval gates, hard stops, and memory rules
+- `context.md`: stable project background and assumptions
+- `continuity.md`: short-term project memory
 - `decisions.md`: durable technical decisions
-- `skills/clarify/SKILL.md`: workflow for vague, risky, broad, or underspecified tasks
-- `skills/plan/SKILL.md`: workflow for non-trivial planning before implementation
-- `skills/implement/SKILL.md`: workflow for approved implementation work
-- `skills/review/SKILL.md`: workflow for critical review and scope checks
+- `skills/clarify/SKILL.md`: clarify vague, risky, broad, or underspecified work
+- `skills/plan/SKILL.md`: plan non-trivial work before implementation
+- `skills/implement/SKILL.md`: implement approved plans or small safe changes
+- `skills/review/SKILL.md`: review diffs, scope, risks, and verification
 
 ## How To Use
 
@@ -31,38 +29,32 @@ Read AGENTS.md, continuity.md, context.md, and the relevant workflow file in ski
 For unclear work:
 
 ```text
-Use skills/clarify/SKILL.md first.
-Do not code yet.
-
+Use skills/clarify/SKILL.md first. Do not code yet.
 My goal is: ...
 ```
 
-For planning:
+For non-trivial implementation:
 
 ```text
 Use skills/plan/SKILL.md.
-Create a small implementation plan.
-Do not code yet.
-Wait for my explicit approval.
-
+Create a small implementation plan and wait for my explicit approval.
 My goal is: ...
 ```
 
-For implementation after approval:
+After approving a plan:
 
 ```text
 Use skills/implement/SKILL.md.
 Implement only the approved vertical slice.
 Keep the diff small.
-Update continuity.md afterwards if the project state changed.
+Report whether continuity.md, decisions.md, context.md, or README.md needed updates.
 ```
 
 For review:
 
 ```text
 Use skills/review/SKILL.md.
-Review the current diff critically.
-Check for scope creep, silent behavior changes, and missing tests.
+Review the current diff critically for correctness, scope creep, and missing verification.
 ```
 
 ## Workflow
@@ -74,26 +66,18 @@ For non-trivial changes:
 3. Ask for explicit approval.
 4. Implement only the approved scope.
 5. Review the result.
-6. Update project memory when needed.
+6. Update or explicitly skip project memory/docs.
 
-Small, low-risk changes can be made directly when the task is clear, but they should be
-mentioned in the final response.
-
-## Small Vertical Slices
-
-Prefer the smallest end-to-end change that produces observable value and can be reviewed,
-tested, and adjusted before expanding scope.
-
-For example, in an LLM pipeline, prefer one sample input that produces one validated
-output over building every abstraction layer upfront.
+Small, low-risk changes can be made directly when the task is clear, but they should
+be mentioned in the final response.
 
 ## Template Maintenance
 
-Update `continuity.md` after non-trivial work when project state, next steps, open
-questions, known issues, or temporary assumptions changed.
+Keep `AGENTS.md` as the source of truth. Keep the other files short and project-specific.
 
-Update `decisions.md` when a durable technical decision is made.
+Update:
 
-Update `context.md` when stable project background changes.
-
-Update this `README.md` when the way to use the template or project changes.
+- `continuity.md` for current project state and next steps
+- `decisions.md` for durable decisions
+- `context.md` for stable background and assumptions
+- `README.md` when usage or workflow changes

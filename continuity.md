@@ -2,37 +2,29 @@
 
 ## Purpose
 
-This file is short-term project memory for future agent sessions.
+Short-term project memory for future agent sessions.
 
-It should answer:
-
-- what is currently being worked on
-- what is already implemented
-- what is not implemented
-- what decisions currently matter
-- what the next steps are
-- what should not be changed without approval
-
-Keep this file concise and current.
+Keep this file concise. It should capture current focus, implementation status, next
+steps, open questions, known issues, and temporary assumptions.
 
 ## Current Focus
 
-Current goal: establish a reusable controlled agentic coding template.
+Current goal: maintain a reusable controlled agentic coding template.
 
-Current task: Python placeholder files have been removed so the repository stays focused
-on agentic coding workflow guidance.
+Current task: the template documentation has been reduced so `AGENTS.md` is the
+central rule source and the supporting files stay lightweight.
 
 Current working mode: Implement
 
-## Current Project State
+## Project State
 
 Implemented:
 
-- agent governance file: `AGENTS.md`
-- human usage guide: `README.md`
-- project memory files: `continuity.md`, `decisions.md`, `context.md`
-- repo-local workflow instructions under `skills/`
-- no application/runtime scaffold; this template is documentation/workflow-only
+- `AGENTS.md` as the central agent governance file
+- `README.md` as the human usage guide
+- `context.md`, `continuity.md`, and `decisions.md` as concise project memory files
+- repo-local workflows under `skills/`
+- no application/runtime scaffold; this repository is documentation/workflow-only
 
 Not implemented:
 
@@ -40,111 +32,26 @@ Not implemented:
 - project-specific architecture context
 - project-specific decisions beyond template defaults
 
-Partially implemented:
-
-- none
-
 Known issues:
 
 - none
 
-## Current Architecture
-
-High-level structure:
-
-```text
-repo/
-  AGENTS.md
-  README.md
-  continuity.md
-  decisions.md
-  context.md
-  skills/
-    clarify/
-    plan/
-    implement/
-    review/
-```
-
-Important modules:
-
-- none yet
-
-Main entry points:
-
-- none yet
-
-Important configs:
-
-- `AGENTS.md`
-- `context.md`
-- `decisions.md`
-
-Important tests/evals:
-
-- none yet
-
-## Current Interfaces / Contracts
-
-Public functions/classes:
-
-- none yet
-
-Input schemas:
-
-- none yet
-
-Output schemas:
-
-- none yet
-
-Config contracts:
-
-- none yet
-
-External APIs/providers:
-
-- none yet
-
-## Current AI / ML / LLM Behavior
-
-Relevant only when this template is adopted by a project with AI/ML/LLM components.
-
-Prompts:
-
-- none yet
-
-Models/providers:
-
-- none yet
-
-Evaluation:
-
-- none yet
-
-Open eval gaps:
-
-- define project-specific eval strategy when AI behavior is introduced
-
 ## Current Decisions
 
-- Normal unit tests must not require live external API calls. See `decisions.md`.
 - Non-trivial changes require a plan and explicit approval before implementation.
 - Architecture and long-term design decisions belong to the human.
-
-## Open Questions
-
-- Replace template context with project-specific facts when this template is adopted.
+- Normal unit tests must not require live external API calls. See `decisions.md`.
+- After non-trivial work, agents must report whether project memory/docs were updated
+  or why no update was needed.
 
 ## Next Steps
 
-- Review the initial template contents.
-- Adjust the strictness and wording based on real usage.
-- Fill `context.md` with project-specific facts in each new project.
+- Use the template in real projects and tune strictness based on observed friction.
+- Replace template context with project-specific facts when adopted.
 
 ## Do Not Change Without Approval
 
-- architecture rules
 - approval gates
-- public API/schema/prompt/model behavior rules
-- testing rule that normal unit tests must not require live external calls
+- hard stops for architecture, APIs, schemas, prompts, models, dependencies, tests, and
+  infrastructure
+- the rule that normal unit tests must not require live external calls
