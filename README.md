@@ -85,6 +85,7 @@ For non-trivial changes:
 6. Implement only the approved scope.
 7. Review the result.
 8. Update or explicitly skip project memory/docs.
+9. Include a suggested commit message after file changes.
 
 Small, low-risk changes can be made directly when the task is clear, but they should
 be mentioned in the final response.

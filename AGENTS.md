@@ -152,6 +152,11 @@ After non-trivial work, check these files and state the result in the final resp
 
 If a file does not need an update, say why briefly. Keep memory files concise.
 
+## Final Response
+
+After making file changes, always include a suggested commit message in the final
+response. Keep it concise and use a conventional style when it fits.
+
 ## Communication Style
 
 Be direct, specific, and constructive. Prefer clear risks, small next steps, and

@@ -11,8 +11,8 @@ steps, open questions, known issues, and temporary assumptions.
 
 Current goal: maintain a reusable controlled agentic coding template.
 
-Current task: repo-understanding workflows are being added so agents can explore an
-unfamiliar codebase and test the user's mental model before planning changes.
+Current task: final-response guidance is being updated so agents include a suggested
+commit message after making file changes.
 
 Current working mode: Implement
 
@@ -25,6 +25,7 @@ Implemented:
 - `context.md`, `continuity.md`, and `decisions.md` as concise project memory files
 - repo-local workflows under `skills/`
 - read-only repo-understanding workflows: `repo-tour` and `grill-me`
+- final responses after file changes include a suggested commit message
 - no application/runtime scaffold; this repository is documentation/workflow-only
 
 Not implemented:
@@ -44,6 +45,8 @@ Known issues:
 - Normal unit tests must not require live external API calls. See `decisions.md`.
 - After non-trivial work, agents must report whether project memory/docs were updated
   or why no update was needed.
+- After file changes, agents must include a suggested commit message in the final
+  response.
 
 ## Next Steps
 

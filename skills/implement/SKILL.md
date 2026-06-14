@@ -50,6 +50,7 @@ Use a compact summary:
 - verification run or not run
 - memory/docs updates made or skipped, with brief reasons
 - remaining risks or notes
+- suggested commit message
 
 ## Stop If
 
