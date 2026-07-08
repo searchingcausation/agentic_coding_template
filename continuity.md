@@ -12,8 +12,8 @@ steps, open questions, known issues, and temporary assumptions.
 Current goal: maintain a reusable controlled agentic coding template.
 
 Current task: adopted native Claude Code integration — skills moved to `.claude/skills/`,
-`CLAUDE.md` is the source of truth (with `AGENTS.md` as pointer), memory files imported
-via `CLAUDE.md`, and a read-only permission allowlist added in `.claude/settings.json`.
+`CLAUDE.md` is the single source of truth, memory files imported via `CLAUDE.md`, and a
+read-only permission allowlist added in `.claude/settings.json`.
 
 Current working mode: Implement
 
@@ -21,8 +21,7 @@ Current working mode: Implement
 
 Implemented:
 
-- `CLAUDE.md` as the central agent governance file (auto-loaded by Claude Code)
-- `AGENTS.md` as a thin pointer to `CLAUDE.md` for other agent tools
+- `CLAUDE.md` as the single central agent governance file (auto-loaded by Claude Code)
 - `README.md` as the human usage guide
 - `context.md`, `continuity.md`, and `decisions.md` as concise project memory files
 - `CLAUDE.md` imports `continuity.md` and `context.md` for automatic session context

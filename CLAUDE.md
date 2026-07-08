@@ -1,7 +1,7 @@
 # Agent Operating Guide
 
 This is the source of truth for how AI coding agents work in this repository. Claude
-Code loads it automatically. `AGENTS.md` is a thin pointer here for other tools.
+Code loads it automatically.
 
 ## Purpose
 

@@ -31,8 +31,8 @@ Status: accepted
 Decision:
 
 `CLAUDE.md` is the single source of truth for agent rules and is loaded automatically by
-Claude Code; `AGENTS.md` is a thin pointer to it for other tools. Workflow skills live
-in `.claude/skills/` so Claude Code discovers them as native skills. `CLAUDE.md` imports
+Claude Code. Workflow skills live in `.claude/skills/` so Claude Code discovers them as
+native skills. `CLAUDE.md` imports
 `continuity.md` and `context.md`. A read-only command allowlist lives in
 `.claude/settings.json`.
 
@@ -46,7 +46,7 @@ Consequences:
 
 - Skills are invocable as slash commands (`/plan`, `/review`, ...).
 - Session context loads automatically via imports; keep imported files concise.
-- Non-Claude tools should follow `AGENTS.md` to `CLAUDE.md`.
+- The template targets Claude Code only; no cross-tool `AGENTS.md` pointer is kept.
 - Enforcement hooks and subagents remain optional, per-project choices.
 
 ## 2026-05-19: Unit tests must not require live external API calls

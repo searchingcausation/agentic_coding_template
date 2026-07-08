@@ -11,7 +11,6 @@ documentation, and review.
 
 - `CLAUDE.md`: central agent rules, approval gates, hard stops, and memory rules
   (loaded automatically by Claude Code)
-- `AGENTS.md`: thin pointer to `CLAUDE.md` for other agent tools
 - `context.md`: stable project background and assumptions
 - `continuity.md`: short-term project memory
 - `decisions.md`: durable technical decisions
@@ -95,8 +94,8 @@ be mentioned in the final response.
 
 ## Template Maintenance
 
-Keep `CLAUDE.md` as the source of truth (`AGENTS.md` only points to it). Keep the other
-files short and project-specific.
+Keep `CLAUDE.md` as the source of truth. Keep the other files short and
+project-specific.
 
 Update:
 
