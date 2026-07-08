@@ -24,6 +24,31 @@ Consequences:
 
 ## Decisions
 
+## 2026-07-08: Use native Claude Code integration
+
+Status: accepted
+
+Decision:
+
+`CLAUDE.md` is the single source of truth for agent rules and is loaded automatically by
+Claude Code; `AGENTS.md` is a thin pointer to it for other tools. Workflow skills live
+in `.claude/skills/` so Claude Code discovers them as native skills. `CLAUDE.md` imports
+`continuity.md` and `context.md`. A read-only command allowlist lives in
+`.claude/settings.json`.
+
+Reason:
+
+The template targets Claude Code. Native placement makes skills invocable and
+auto-triggerable, removes the manual "read these files" session ritual, and cuts
+approval prompts for safe read-only commands.
+
+Consequences:
+
+- Skills are invocable as slash commands (`/plan`, `/review`, ...).
+- Session context loads automatically via imports; keep imported files concise.
+- Non-Claude tools should follow `AGENTS.md` to `CLAUDE.md`.
+- Enforcement hooks and subagents remain optional, per-project choices.
+
 ## 2026-05-19: Unit tests must not require live external API calls
 
 Status: accepted

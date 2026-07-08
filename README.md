@@ -9,50 +9,54 @@ documentation, and review.
 
 ## Files
 
-- `AGENTS.md`: central agent rules, approval gates, hard stops, and memory rules
+- `CLAUDE.md`: central agent rules, approval gates, hard stops, and memory rules
+  (loaded automatically by Claude Code)
+- `AGENTS.md`: thin pointer to `CLAUDE.md` for other agent tools
 - `context.md`: stable project background and assumptions
 - `continuity.md`: short-term project memory
 - `decisions.md`: durable technical decisions
-- `skills/clarify/SKILL.md`: clarify vague, risky, broad, or underspecified work
-- `skills/repo-tour/SKILL.md`: explore an unfamiliar repo without editing files
-- `skills/grill-me/SKILL.md`: test and strengthen your understanding of a repo
-- `skills/plan/SKILL.md`: plan non-trivial work before implementation
-- `skills/implement/SKILL.md`: implement approved plans or small safe changes
-- `skills/review/SKILL.md`: review diffs, scope, risks, and verification
+- `.claude/skills/clarify/`: clarify vague, risky, broad, or underspecified work
+- `.claude/skills/repo-tour/`: explore an unfamiliar repo without editing files
+- `.claude/skills/grill-me/`: test and strengthen your understanding of a repo
+- `.claude/skills/plan/`: plan non-trivial work before implementation
+- `.claude/skills/implement/`: implement approved plans or small safe changes
+- `.claude/skills/review/`: review diffs, scope, risks, and verification
+- `.claude/settings.json`: read-only command allowlist to reduce approval prompts
 
 ## How To Use
 
-At the start of a new agent session, ask the agent to read:
+Claude Code loads `CLAUDE.md` automatically, and `CLAUDE.md` imports `continuity.md`
+and `context.md`. So the session starts with the rules and current state already in
+context — no manual "read these files" step is needed.
 
-```text
-Read AGENTS.md, continuity.md, context.md, and the relevant workflow file in skills/.
-```
+The workflows in `.claude/skills/` are native skills. Invoke them as slash commands, or
+just describe the task and let Claude route to the right one.
 
 For a new or unfamiliar repo:
 
 ```text
-Use skills/repo-tour/SKILL.md. Do not edit files.
-Map the repo and explain the main execution path.
+/repo-tour
+Map the repo and explain the main execution path. Do not edit files.
 ```
 
 To check your understanding:
 
 ```text
-Use skills/grill-me/SKILL.md. Do not edit files.
+/grill-me
 Ask one question at a time about architecture, data flow, entry points, tests, and failure modes.
 ```
 
 For unclear work:
 
 ```text
-Use skills/clarify/SKILL.md first. Do not code yet.
+/clarify
 My goal is: ...
 ```
 
 For non-trivial implementation:
 
 ```text
-Use skills/plan/SKILL.md.
+/plan
 Create a small implementation plan and wait for my explicit approval.
 My goal is: ...
 ```
@@ -60,16 +64,15 @@ My goal is: ...
 After approving a plan:
 
 ```text
-Use skills/implement/SKILL.md.
-Implement only the approved vertical slice.
-Keep the diff small.
+/implement
+Implement only the approved vertical slice. Keep the diff small.
 Report whether continuity.md, decisions.md, context.md, or README.md needed updates.
 ```
 
 For review:
 
 ```text
-Use skills/review/SKILL.md.
+/review
 Review the current diff critically for correctness, scope creep, and missing verification.
 ```
 
@@ -92,7 +95,8 @@ be mentioned in the final response.
 
 ## Template Maintenance
 
-Keep `AGENTS.md` as the source of truth. Keep the other files short and project-specific.
+Keep `CLAUDE.md` as the source of truth (`AGENTS.md` only points to it). Keep the other
+files short and project-specific.
 
 Update:
 
