@@ -1,105 +1,103 @@
 # Agentic Coding Template
 
-A reusable template for controlled AI-assisted coding.
+A reusable engineering workspace for **Codex and Claude Code**. One shared set of
+instructions, three focused workflows, and executable checks support the cycle:
 
-The template is intentionally conservative: small steps, explicit approval for
-non-trivial changes, and no silent architecture decisions. The human owns long-term
-direction; agents help with clarification, planning, implementation, debugging,
-documentation, and review.
+**Specify → explore → plan → implement → verify → review → learn.**
 
-## Files
+The template is stack-neutral. Project specifications, architecture decisions, and
+task records start empty, ready for your project.
 
-- `CLAUDE.md`: central agent rules, approval gates, hard stops, and memory rules
-  (loaded automatically by Claude Code)
-- `context.md`: stable project background and assumptions
-- `continuity.md`: short-term project memory
-- `decisions.md`: durable technical decisions
-- `.claude/skills/clarify/`: clarify vague, risky, broad, or underspecified work
-- `.claude/skills/repo-tour/`: explore an unfamiliar repo without editing files
-- `.claude/skills/grill-me/`: test and strengthen your understanding of a repo
-- `.claude/skills/plan/`: plan non-trivial work before implementation
-- `.claude/skills/implement/`: implement approved plans or small safe changes
-- `.claude/skills/review/`: review diffs, scope, risks, and verification
-- `.claude/settings.json`: read-only command allowlist to reduce approval prompts
+## Quick start
 
-## How To Use
+1. Create a project from this template, including its hidden directories.
+2. Run `make setup` and `make check` with Python 3.11+ installed.
+3. Follow [Set up your project](docs/adopting.md) to add project context and commands.
+4. Open the repository in Codex or Claude Code and describe the desired outcome.
 
-Claude Code loads `CLAUDE.md` automatically, and `CLAUDE.md` imports `continuity.md`
-and `context.md`. So the session starts with the rules and current state already in
-context — no manual "read these files" step is needed.
-
-The workflows in `.claude/skills/` are native skills. Invoke them as slash commands, or
-just describe the task and let Claude route to the right one.
-
-For a new or unfamiliar repo:
-
-```text
-/repo-tour
-Map the repo and explain the main execution path. Do not edit files.
+```sh
+make setup
+make check
 ```
 
-To check your understanding:
+The helper scripts use the Python standard library. Make is optional:
 
-```text
-/grill-me
-Ask one question at a time about architecture, data flow, entry points, tests, and failure modes.
+```sh
+python3 agent/scripts/check_harness.py
+python3 -m unittest discover -s agent/tests -v
 ```
 
-For unclear work:
+On systems that expose Python 3 as `python`, use that command or
+`make PYTHON=python check`.
+
+## Work with an agent
+
+| What you need | Codex | Claude Code |
+| --- | --- | --- |
+| A plan grounded in the spec and repository | `$plan-from-spec` | `/plan-from-spec` |
+| A reproduced and verified bug fix | `$debug-fix` | `/debug-fix` |
+| A review from fresh context | `$independent-review` | `/independent-review` |
+
+You can also describe a task in plain language. Both tools use
+[the shared working agreement](agent/README.md); skill details load when relevant.
+
+For a feature, give the agent a goal, constraints, and observable acceptance criteria.
+For a bug, describe expected and actual behavior plus a reproduction. For a review,
+provide the spec and a precise diff scope in a fresh session.
 
 ```text
-/clarify
-My goal is: ...
+Plan this feature:
+Users can cancel an export while it is running.
+Preserve completed files and the existing public API.
+Acceptance: cancellation stops new work and reports a cancelled status.
+Inspect the repository and save an implementation plan. Do not implement yet.
 ```
 
-For non-trivial implementation:
+After reviewing the plan, ask the agent to implement it. To resume a task, point it
+to that task's file in `docs/exec-plans/active/`.
+After every task that changes repository files, the agent includes an English
+commit-message suggestion in its final response, including for small edits.
 
-```text
-/plan
-Create a small implementation plan and wait for my explicit approval.
-My goal is: ...
-```
+## Match the process to the risk
 
-After approving a plan:
+| Risk | Typical change | Process |
+| --- | --- | --- |
+| LOW | Local, reversible correction | Explore → implement → relevant checks. |
+| NORMAL | Feature or substantial bug fix | Spec → explore and check external docs → plan → implement → verify. |
+| HIGH | Architecture, security, public contract, migration | NORMAL plus human plan review and fresh independent review before merge. |
 
-```text
-/implement
-Implement only the approved vertical slice. Keep the diff small.
-Report whether continuity.md, decisions.md, context.md, or README.md needed updates.
-```
+Risk comes from the consequences of a mistake. Small tasks stay lightweight;
+consequential decisions and external actions have explicit authorization boundaries.
+See the [working agreement](agent/README.md) for the full rules.
 
-For review:
+## Find the right artifact
 
-```text
-/review
-Review the current diff critically for correctness, scope creep, and missing verification.
-```
+| Artifact | Purpose |
+| --- | --- |
+| [AGENTS.md](AGENTS.md), [CLAUDE.md](CLAUDE.md) | Tool entry points |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | Current system map and project architecture outline |
+| [agent/README.md](agent/README.md) | Shared commands, rules, and completion criteria |
+| [agent/workflows/](agent/workflows/) | Canonical planning, debugging, and review procedures |
+| [docs/product-specs/](docs/product-specs/) | What the project should do |
+| [docs/design-decisions/](docs/design-decisions/) | Why a technical direction was chosen |
+| [docs/exec-plans/](docs/exec-plans/) | How to carry out and resume a task |
+| [agent/scripts/](agent/scripts/) and [agent/tests/](agent/tests/) | Offline checks and their regression suite |
+| [.github/workflows/](.github/workflows/) | CI using the same local check command |
 
-## Workflow
+The three skills have thin adapters under `.agents/skills/` and `.claude/skills/`.
+Shared workflow behavior is maintained once in `agent/workflows/`.
 
-For non-trivial changes:
+## Verification
 
-1. Clarify the goal.
-2. Explore the repo when the codebase is unfamiliar.
-3. Test understanding when the mental model is uncertain.
-4. Plan the smallest useful vertical slice.
-5. Ask for explicit approval.
-6. Implement only the approved scope.
-7. Review the result.
-8. Update or explicitly skip project memory/docs.
-9. Include a suggested commit message after file changes.
+`make check` validates the harness structure, local documentation links, shared
+workflow references, skill metadata, helper syntax, and regression tests. During
+project setup, extend it with your actual application tests, linting, typecheck,
+and build. The included checks establish the integrity of the template itself.
 
-Small, low-risk changes can be made directly when the task is clear, but they should
-be mentioned in the final response.
+## Design principles
 
-## Template Maintenance
-
-Keep `CLAUDE.md` as the source of truth. Keep the other files short and
-project-specific.
-
-Update:
-
-- `continuity.md` for current project state and next steps
-- `decisions.md` for durable decisions
-- `context.md` for stable background and assumptions
-- `README.md` when usage or workflow changes
+[The design guide](docs/principles.md) explains the report-based approach:
+progressive disclosure, task-local continuity, risk-proportional planning, closed
+feedback loops, and promotion of demonstrated lessons into tests or other assets.
+The complete [background report](docs/references/agentic-engineering-playbook.pdf)
+is included for reference and can be read when needed.

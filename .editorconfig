@@ -1,0 +1,27 @@
+# Editor settings applied automatically by EditorConfig-aware editors.
+# Not enforced by any check: it shapes what editors write, nothing more.
+
+# Stop searching parent directories, so settings outside this repo never apply.
+root = true
+
+# global pattern, that is for every file
+[*] 
+charset = utf-8
+# Unix line endings keep diffs from showing every line as changed on Windows.
+end_of_line = lf
+# Avoids git's "\ No newline at end of file" and the spurious diff that follows.
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+# Later sections override only the keys they name; everything above still applies.
+
+# PEP 8 indentation for Python sources.
+[*.py]
+indent_size = 4
+
+# Required, not stylistic: make fails with "missing separator" unless recipe
+# lines start with a real tab. This overrides the space default above.
+[Makefile]
+indent_style = tab
