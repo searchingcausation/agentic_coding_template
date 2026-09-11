@@ -1,23 +1,39 @@
+# Display name of this workflow in GitHub Actions.
 name: Template checks
 
+# Events that trigger the checks.
 on:
+  # Run on every push to this repository.
   push:
+  # Run on pull request events, such as opening a PR or adding commits.
   pull_request:
+  # Also allow manual runs through GitHub Actions.
   workflow_dispatch:
 
+# Give the automatically provided GitHub token read-only access to repository contents.
 permissions:
   contents: read
 
+# A workflow consists of one or more jobs.
 jobs:
+  # Custom identifier for the job that validates the development harness.
   harness:
+    # Run the job in an Ubuntu environment provided by GitHub.
     runs-on: ubuntu-latest
+    # Cancel the job if it takes longer than five minutes.
     timeout-minutes: 5
+    # Run these steps in order.
     steps:
+      # Check out the repository code into the runner; @v6 selects the action version.
       - uses: actions/checkout@v6
         with:
+          # Do not persist the GitHub token for subsequent Git commands.
           persist-credentials: false
+      # Make the specified Python version available to subsequent steps.
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      # Display name of the validation step in the workflow logs.
       - name: Validate harness and run regression tests
+        # Run the Makefile target "check": lint checks and tests.
         run: make check
