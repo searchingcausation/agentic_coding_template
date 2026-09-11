@@ -91,9 +91,14 @@ a reviewed diff, and current affected documentation. Report the outcome, checks,
 and unresolved limitations. HIGH changes remain review-pending until independent
 review is complete; do not present them as merge-ready earlier.
 
-After every task that creates, edits, deletes, or moves repository files, include
+## Commit-message suggestions
+
+After every response in which you create, edit, delete, or move repository files, include
 a suggested commit message in the final response, including for small changes and
-documentation-only work. Write it in English, use a concise Conventional Commit
-subject, and describe the actual changes delivered. Add a body when useful for a
-larger change. A request for a commit message does not itself authorize committing
-or pushing.
+documentation-only work, and when handing off partially completed work. Write it in
+English in a copyable code block, use a concise Conventional Commit subject, and
+describe the actual changes delivered. Add a body when useful for a larger change.
+
+Only suggest the message. Do not run `git commit`, amend a commit, or push unless
+the user explicitly requests that action. An implementation request, plan approval,
+or request for a commit-message suggestion does not authorize those Git actions.

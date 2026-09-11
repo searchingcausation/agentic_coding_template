@@ -55,8 +55,9 @@ Inspect the repository and save an implementation plan. Do not implement yet.
 
 After reviewing the plan, ask the agent to implement it. To resume a task, point it
 to that task's file in `docs/exec-plans/active/`.
-After every task that changes repository files, the agent includes an English
-commit-message suggestion in its final response, including for small edits.
+Whenever a response includes repository file changes, the agent provides a copyable
+English commit-message suggestion, including for small edits and partial handoffs.
+Committing, amending commits, and pushing require an explicit request.
 
 ## Match the process to the risk
 
