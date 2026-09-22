@@ -97,6 +97,7 @@ See the [working agreement](agent/README.md) for the full rules.
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Current system map and project architecture outline |
 | [agent/README.md](agent/README.md) | Shared commands, rules, and completion criteria |
 | [agent/workflows/](agent/workflows/) | Canonical planning, debugging, and review procedures |
+| [docs/project-scope.template.md](docs/project-scope.template.md) | Initial problem framing, MVP boundaries, and assumptions to validate |
 | [docs/product-specs/](docs/product-specs/) | What the project should do |
 | [docs/design-decisions/](docs/design-decisions/) | Why a technical direction was chosen |
 | [docs/exec-plans/](docs/exec-plans/) | How to carry out and resume a task |

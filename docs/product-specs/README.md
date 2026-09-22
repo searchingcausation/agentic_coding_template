@@ -3,6 +3,10 @@
 Describe observable product behavior: goals, non-goals, constraints, contracts,
 acceptance criteria, and important failure cases.
 
+Use the [project scope](../project-scope.template.md) to establish the problem,
+users, and MVP boundaries at project start. Derive detailed requirements here and
+link them from the project's scope; keep each requirement in one maintained place.
+
 Copy [template.md](template.md) to a descriptive filename when a requirement should
 serve as a durable reference. Keep implementation steps in execution plans and
 technical rationale in design decisions. A one-off task may keep a compact spec

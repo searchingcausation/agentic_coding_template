@@ -2,12 +2,21 @@
 
 ## Describe the actual project
 
+Start with [the project-scoping template](project-scope.template.md), copied to
+`docs/project-scope.md`. Capture the problem, users, evidence, proposed approach,
+MVP boundaries, dependencies, and the first uncertainty to validate. Keep it brief;
+use its optional AI questions only if the product itself uses AI. Revisit the scope
+when evidence changes the project's direction.
+
 Fill in the project name, purpose, users, and boundaries in `ARCHITECTURE.md`.
 Describe the actual components, entry points, dependency direction, data flows,
 external services, and important failure boundaries as they take shape.
 Write your product introduction and development commands in `README.md`.
 
-Create a first durable spec from [the spec template](product-specs/template.md).
+Translate the relevant scope into a first durable spec using
+[the spec template](product-specs/template.md). The scope explains project direction;
+specs define detailed behavior, and execution plans organize implementation work.
+Link detailed records from the scope as they appear instead of duplicating them.
 Keep acceptance criteria observable. Record consequential design choices using
 [the ADR template](design-decisions/template.md); label new proposals honestly.
 Define the user/operator outcome and its evidence in the spec. Add measurement
