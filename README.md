@@ -5,8 +5,8 @@ instructions, three focused workflows, and executable checks support the cycle:
 
 **Specify → explore → plan → implement → verify → review → learn.**
 
-The template is stack-neutral. Project specifications, architecture decisions, and
-task records start empty, ready for your project.
+The template is stack-neutral. Project specifications and architecture decisions
+start empty; archived task records document template maintenance.
 
 ## Quick start
 
@@ -41,6 +41,15 @@ On systems that expose Python 3 as `python`, use that command or
 You can also describe a task in plain language. Both tools use
 [the shared working agreement](agent/README.md); skill details load when relevant.
 
+Before every non-trivial change, the agent saves a Markdown proposal in
+`docs/exec-plans/active/<task>.md` and presents it with a link before implementation.
+It includes the understood goal, proposed changes, assumptions/open questions,
+material trade-offs, and ordered tasks with verification. The same file records
+progress and decisions, then moves to `completed/` when finished. This also applies
+without invoking a skill. Trivial corrections need no plan unless requested.
+Already authorized implementation can proceed after presenting the proposal;
+planning-only requests and HIGH-risk work retain their approval boundaries.
+
 For a feature, give the agent a goal, constraints, and observable acceptance criteria.
 For a bug, describe expected and actual behavior plus a reproduction. For a review,
 provide the spec and a precise diff scope in a fresh session.
@@ -63,8 +72,8 @@ Committing, amending commits, and pushing require an explicit request.
 
 | Risk | Typical change | Process |
 | --- | --- | --- |
-| LOW | Local, reversible correction | Explore → implement → relevant checks. |
-| NORMAL | Feature or substantial bug fix | Spec → explore and check external docs → plan → implement → verify. |
+| LOW | Local, reversible correction | Explore → proposal if non-trivial → implement → relevant checks. |
+| NORMAL | Feature or substantial bug fix | Spec → explore and check external docs → save and present proposal → implement → verify. |
 | HIGH | Architecture, security, public contract, migration | NORMAL plus human plan review and fresh independent review before merge. |
 
 Risk comes from the consequences of a mistake. Small tasks stay lightweight;

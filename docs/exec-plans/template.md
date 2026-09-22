@@ -19,9 +19,20 @@ for a one-off task. Use paths relative to this file's destination directory.>
 <For version-sensitive dependencies: exact version, official source, date checked,
 implication. Otherwise explain briefly why repository evidence suffices.>
 
+## Proposed changes
+
+<What you think should change, why, and the affected files/components. Summarize
+and link this proposal to the user before implementation edits begin.>
+
+## Assumptions / open questions
+
+<Explicit assumptions, supporting evidence or inference, unresolved questions,
+and how answers could change the approach. State if there are none.>
+
 ## Plan
 
-1. <Small observable step; affected files and dependencies.>
+1. <Proposed task; affected files/components, dependencies, expected outcome, and
+   verification. Order tasks so another session can implement them.>
 
 ## Trade-offs / decisions
 
@@ -36,6 +47,7 @@ choices from accepted ones. If no material trade-off exists, state that.>
 
 ## Progress
 
+- [ ] Proposal saved and presented to the user before implementation.
 - [ ] <Milestone>
 
 ## Failed approaches

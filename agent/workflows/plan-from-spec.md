@@ -33,8 +33,10 @@ unverified API; ask if that uncertainty prevents a safe approach.
 
 Use [the execution-plan template](../../docs/exec-plans/template.md). Keep one file
 in `docs/exec-plans/active/` with goal/spec reference, risk and authorization state,
-affected paths, ordered steps, verification tied to each acceptance criterion,
-rollback when relevant, and a next step.
+proposed changes and their rationale, explicit assumptions/open questions, affected
+paths, ordered proposed tasks with dependencies and expected outcomes, verification
+tied to each acceptance criterion, rollback when relevant, and a next step.
+Reuse an existing task plan when resuming; preserve its decisions and rationale.
 
 For each material trade-off, state realistic alternatives, relevant pros/cons,
 your recommendation, and why it fits this repository. If there is no material
@@ -47,7 +49,10 @@ accepted decisions or write an acceptance on the user's behalf.
 
 ## Hand off
 
-Return the plan path, recommended approach, and outstanding decisions. Honor a
-planning-only request. HIGH work without an approved approach needs human plan
+Present the proposal with a link to the Markdown file, summarizing intended changes,
+assumptions, material trade-offs, proposed tasks, and outstanding decisions. This
+must happen before implementation edits, as required by the shared agreement for
+every non-trivial change. Honor a planning-only request.
+HIGH work without an approved approach needs human plan
 review before implementation. Existing approval remains valid for its scope; a
 plan-only skill does not revoke it or require it to be repeated.

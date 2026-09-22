@@ -10,8 +10,8 @@ Write your product introduction and development commands in `README.md`.
 Create a first durable spec from [the spec template](product-specs/template.md).
 Keep acceptance criteria observable. Record consequential design choices using
 [the ADR template](design-decisions/template.md); label new proposals honestly.
-Specifications, decisions, and task directories are ready for your project's first
-records. There is no pre-filled project history to clear out.
+Specifications and decisions are ready for your project's first records. Completed
+task records document template maintenance, not product decisions for your project.
 
 ## Connect executable evidence
 
@@ -54,10 +54,13 @@ checked on 2026-09-10; recheck it when changing tool integration.
 
 ## Run a task end to end
 
-For substantial work, copy [the execution-plan template](exec-plans/template.md)
-to `docs/exec-plans/active/<task>.md`. Set its spec reference (or inline one-off
-spec), risk, authorization state, acceptance criteria, steps, and verification.
-The plan carries progress and next step between sessions.
+For non-trivial work, copy [the execution-plan template](exec-plans/template.md)
+to `docs/exec-plans/active/<task>.md`, or reuse the task's existing plan. Set its spec
+reference (or inline one-off spec), risk, authorization state, acceptance criteria,
+proposed changes, assumptions/open questions, trade-offs, tasks, and verification.
+Before implementation edits, the agent must summarize the proposal and link the
+file, including for plain-language requests. Apply the shared authorization rules.
+The same plan carries decisions, progress, and next step between sessions.
 
 After implementation and relevant checks, review the diff. For HIGH risk, use a
 fresh session for independent review before merge. Record the evidence; move the

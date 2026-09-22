@@ -18,12 +18,44 @@ The user's instructions define the task within system and tool permissions.
 
 | Tier | Consequences | Minimum process |
 | --- | --- | --- |
-| LOW | Local and readily reversible | Explore, implement, run relevant checks. |
-| NORMAL | New behavior, several files, substantial bug fix | Capture spec, explore, check version-sensitive docs, record plan, implement, verify. |
+| LOW | Local and readily reversible | Explore, save and present a proposal if non-trivial, implement, run relevant checks. |
+| NORMAL | New behavior, several files, substantial bug fix | Capture spec, explore, check version-sensitive docs, save and present proposal, implement, verify. |
 | HIGH | Architecture boundaries, security, public contracts, migration, production-critical behavior | NORMAL plus human review of the concrete plan before implementation and fresh independent review before merge. |
 
 A one-off NORMAL task can carry its compact spec inside the execution plan.
-Durable product requirements belong in product specs. LOW tasks need no plan file.
+Durable product requirements belong in product specs.
+
+### Proposal before non-trivial implementation
+
+Before implementing any non-trivial change, save a Markdown proposal using the
+[execution-plan template](../docs/exec-plans/template.md) in
+`docs/exec-plans/active/<task>.md`. Summarize it to the user and link the file before
+implementation edits begin. This applies to both agents, including plain-language
+requests without an explicit planning skill invocation.
+
+All NORMAL and HIGH changes are non-trivial. LOW changes also need a proposal when
+they require substantive design choices, investigation, or coordinated changes.
+An obvious typo, formatting correction, or similarly mechanical local edit needs
+no plan file unless the user asks for one. If trivial work grows beyond that scope,
+save and present the proposal before continuing with the broader change.
+
+The proposal must include:
+
+- The understood goal, scope, constraints, and observable acceptance criteria.
+- What should change, why, and which files or components are likely affected.
+- Explicit assumptions and open questions, distinguishing evidence from inference.
+- Material trade-offs, realistic alternatives, and the recommended approach; state
+  when no material trade-off exists.
+- Ordered proposed tasks with dependencies and expected outcomes, plus verification.
+
+Use the same file for the proposal, implementation plan, and subsequent task state.
+On resumption, read and reuse it. Record and present material scope or approach
+changes before implementing them; retain the rationale and decisions in the file.
+Presenting a proposal does not itself require an extra approval round for already
+authorized work. Apply the authorization rules below; never label a proposal as
+user-approved without evidence.
+
+### Authorization
 
 A clear implementation request authorizes work within its scope. For HIGH work,
 prepare the concrete plan and resolve any unapproved consequential choices before
@@ -80,8 +112,9 @@ Add build/typecheck commands when the project has an applicable toolchain.
 
 ## Continuity and completion
 
-Keep substantial task state in one [execution plan](../docs/exec-plans/README.md):
-plan, progress, decisions, failed approaches, verification, learnings, and next step.
+Keep non-trivial task state in one [execution plan](../docs/exec-plans/README.md):
+proposal, assumptions, plan, progress, decisions, failed approaches, verification,
+learnings, and next step. Chat history is not the durable task record.
 Update it at milestones and handoff. Archive it when acceptance criteria and required
 reviews are satisfied. Promote confirmed, reusable learnings to the appropriate
 spec, architecture section, ADR, workflow, test, or deterministic check.

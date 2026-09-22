@@ -1,7 +1,12 @@
 # Debug and fix
 
 Use for an observed defect with expected behavior. Apply the shared risk tiers;
-LOW bugs need no plan document, and HIGH changes still need an approved approach.
+Trivial LOW bugs need no plan document, and HIGH changes still need an approved
+approach. For every non-trivial fix, follow the shared proposal requirement: after
+investigation, save and present the proposed changes, assumptions, trade-offs, and
+tasks before implementation edits, including the regression test. Record subsequent
+reproduction and verification evidence in that same plan. If the diagnosis changes
+the approach materially, update and present the proposal before proceeding.
 
 ## Establish a reproduction
 

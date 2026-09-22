@@ -15,7 +15,9 @@ separate artifacts with clear ownership.
 ## Process proportional to consequences
 
 A small reversible correction needs inspection and verification. Substantial work
-needs an explicit outcome and a concrete plan. Architecture, security, migrations,
+needs an explicit outcome and a concrete proposal saved in Markdown and presented
+before implementation. This includes non-trivial work with LOW consequences;
+complexity and risk are separate considerations. Architecture, security, migrations,
 and public contracts need deeper human and independent review. Risk is about the
 cost of a mistake rather than the size of the diff.
 
@@ -23,7 +25,8 @@ cost of a mistake rather than the size of the diff.
 
 Inspect actual code, callers, tests, and interfaces. For external, version-sensitive
 behavior, establish the version and read official documentation before relying on
-an API. Make material trade-offs and the verification strategy visible.
+an API. State the proposed changes, assumptions, material trade-offs, ordered tasks,
+and verification strategy in the task's execution plan and present it to the user.
 
 ## Closed feedback loops
 
