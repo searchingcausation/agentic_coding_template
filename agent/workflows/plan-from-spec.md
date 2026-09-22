@@ -8,12 +8,19 @@ may create/update planning documents; it does not change implementation files.
 
 Read the shared agreement, relevant architecture, and supplied spec. If there is
 only a goal, capture observable acceptance criteria, constraints, and non-goals.
+Define the desired user/operator improvement and its evidence. Where useful,
+record baseline, target, measurement method, limits, and decision thresholds.
+Label unknown baselines and add a measurement task; proposed targets are not user
+requirements. Qualitative outcomes need no invented numbers. Separate delivery
+acceptance from later product outcomes and name their follow-up trigger or owner.
 Ask only questions that block a useful plan. Record assumptions explicitly.
 Choose LOW/NORMAL/HIGH from consequences. Do not create a plan file for a trivial
 task unless the user requests one.
 
 Inspect the actual entry points, callers, tests, and affected contracts before
 choosing an approach. Cite paths. Separate repository evidence from inference.
+Read relevant entries in the project's existing backlog or tracker. Link selected
+items into the plan without treating the backlog itself as authorization.
 
 ## Check external assumptions
 
@@ -37,6 +44,14 @@ proposed changes and their rationale, explicit assumptions/open questions, affec
 paths, ordered proposed tasks with dependencies and expected outcomes, verification
 tied to each acceptance criterion, rollback when relevant, and a next step.
 Reuse an existing task plan when resuming; preserve its decisions and rationale.
+
+For larger work with distinct deliverables/dependencies, group tasks into phases
+with visible results, prerequisites, exit evidence, and any required human decision.
+Small plans can stay flat. Record relevant stop/replanning conditions while keeping
+normal progress within existing authorization. Identify likely documentation impact
+and the evidence needed to resolve it at closure. Use the execution-plan guide's
+follow-up lifecycle for genuine deferred work; acceptance blockers stay in scope
+unless an explicit, authorized scope change resolves them.
 
 For each material trade-off, state realistic alternatives, relevant pros/cons,
 your recommendation, and why it fits this repository. If there is no material

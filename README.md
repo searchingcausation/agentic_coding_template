@@ -5,8 +5,8 @@ instructions, three focused workflows, and executable checks support the cycle:
 
 **Specify → explore → plan → implement → verify → review → learn.**
 
-The template is stack-neutral. Project specifications and architecture decisions
-start empty; archived task records document template maintenance.
+The template is stack-neutral. Project specifications, architecture decisions, and
+task records start empty, ready for your project.
 
 ## Quick start
 
@@ -49,6 +49,15 @@ progress and decisions, then moves to `completed/` when finished. This also appl
 without invoking a skill. Trivial corrections need no plan unless requested.
 Already authorized implementation can proceed after presenting the proposal;
 planning-only requests and HIGH-risk work retain their approval boundaries.
+
+The proposal defines the intended improvement and how to verify it, using measured
+baselines and targets where useful. Larger tasks have phases with visible outcomes
+and exit checks; small plans keep a flat task list. At handoff or completion, the
+same Markdown file records results against the original criteria, deviations,
+documentation updates, and limitations. Genuine deferred work goes into an
+on-demand backlog or existing tracker with a source link and revisit trigger;
+unfinished acceptance work remains in the active plan. See the
+[execution-plan guide](docs/exec-plans/README.md) for the lifecycle and formats.
 
 For a feature, give the agent a goal, constraints, and observable acceptance criteria.
 For a bug, describe expected and actual behavior plus a reproduction. For a review,

@@ -10,8 +10,14 @@ Write your product introduction and development commands in `README.md`.
 Create a first durable spec from [the spec template](product-specs/template.md).
 Keep acceptance criteria observable. Record consequential design choices using
 [the ADR template](design-decisions/template.md); label new proposals honestly.
-Specifications and decisions are ready for your project's first records. Completed
-task records document template maintenance, not product decisions for your project.
+Define the user/operator outcome and its evidence in the spec. Add measurement
+methods, baselines, targets, limits, and decision thresholds where meaningful.
+Mark unknown baselines and plan their measurement; qualitative tasks need no
+invented numbers. Keep later product measures separate from delivery acceptance
+and give them a follow-up trigger or owner.
+Specifications, decisions, and task directories are ready for your project's first
+records. The template includes reusable guidance and templates without pre-filled
+task history.
 
 ## Connect executable evidence
 
@@ -62,10 +68,23 @@ Before implementation edits, the agent must summarize the proposal and link the
 file, including for plain-language requests. Apply the shared authorization rules.
 The same plan carries decisions, progress, and next step between sessions.
 
+Read relevant backlog/tracker entries when choosing task scope. Larger plans can
+use phases with deliverables, prerequisites, exit evidence, and any required human
+decision; small plans can stay flat. Continue within authorization after phase
+checks. Record unresolved requirements or unavailable checks and continue useful
+independent work. Identify affected documentation while planning.
+
 After implementation and relevant checks, review the diff. For HIGH risk, use a
-fresh session for independent review before merge. Record the evidence; move the
-plan into `completed/` when finished. Fix links affected by that move, then run
-`make check`. Promote only demonstrated, reusable lessons into maintained artifacts.
+fresh session for independent review before merge. Resolve documentation impact
+with links to updated artifacts or reasons unchanged. Write an outcome comparing
+delivery with the original criteria, including deviations, evidence, and limitations.
+Use the [follow-up lifecycle](exec-plans/README.md#follow-ups-and-backlog) for genuine
+deferred items; create `docs/backlog.md` only when needed, or use the existing
+tracker. Required acceptance work remains in the active plan.
+
+Move the plan into `completed/` when its criteria and required reviews are satisfied.
+Fix links affected by that move, including backlog references, then run `make check`.
+Promote only demonstrated, reusable lessons into maintained artifacts.
 
 ## Add machinery when it solves an observed problem
 

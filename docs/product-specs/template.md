@@ -12,6 +12,23 @@ Updated: <YYYY-MM-DD>
 
 <Behavior or areas explicitly excluded.>
 
+## Success measures
+
+<What improves for the user/operator, and what evidence demonstrates it? A concrete
+qualitative observation is sufficient where numbers add no value.>
+
+| Outcome | Evidence / measurement method | Baseline and target, if relevant |
+| --- | --- | --- |
+| <Desired improvement> | <Test, observation, or reproducible measurement> | <Known baseline and proposed/accepted target, or not applicable> |
+
+<Name unknown baselines and how to measure them; never invent values. Reference
+relevant limits below and, when useful, the threshold for adding complexity or
+revisiting a decision. Distinguish proposed targets from accepted requirements.>
+
+<Separate delivery acceptance from longer-term product success. For outcomes that
+need later observation, record the follow-up trigger or owner and evidence needed;
+passing implementation tests does not prove those outcomes.>
+
 ## Constraints and contracts
 
 <Compatibility, interfaces, data, security, performance, and platform constraints.

@@ -42,11 +42,21 @@ save and present the proposal before continuing with the broader change.
 The proposal must include:
 
 - The understood goal, scope, constraints, and observable acceptance criteria.
+- The intended user/operator improvement and its evidence. Where useful, include
+  measurement method, baseline/target, and decision thresholds. Label unknown
+  baselines and proposed targets; qualitative evidence is sufficient when numbers
+  add no value. Distinguish delivery criteria from later product outcomes.
 - What should change, why, and which files or components are likely affected.
 - Explicit assumptions and open questions, distinguishing evidence from inference.
 - Material trade-offs, realistic alternatives, and the recommended approach; state
   when no material trade-off exists.
 - Ordered proposed tasks with dependencies and expected outcomes, plus verification.
+
+Read relevant existing follow-ups when planning work in an area. For larger tasks,
+group work into phases with observable deliverables, prerequisites, exit evidence,
+and any needed human decision. Small plans can keep a flat task list. Phase checks
+allow progress within authorization; they add no routine permission round. Identify
+likely affected documentation in the plan and resolve its impact before closure.
 
 Use the same file for the proposal, implementation plan, and subsequent task state.
 On resumption, read and reuse it. Record and present material scope or approach
@@ -62,6 +72,11 @@ prepare the concrete plan and resolve any unapproved consequential choices befor
 implementation. Respect approval already given; planning-only requests authorize
 planning. Ask about missing information that materially changes the result, and
 continue useful independent work while it is unresolved.
+
+Record task-specific stop/replanning conditions when relevant. Pause affected work
+if a material requirement remains unresolved or the next action exceeds authorization;
+continue independent authorized work. When the same failure repeats without new
+evidence, revisit the diagnosis and record the new hypothesis before retrying.
 
 Production writes, publishing, external communication, destructive shared actions,
 and paid live evaluations require authorization for those actions. Preserve
@@ -120,9 +135,22 @@ reviews are satisfied. Promote confirmed, reusable learnings to the appropriate
 spec, architecture section, ADR, workflow, test, or deterministic check.
 
 A completed change meets its acceptance criteria, has relevant verification evidence,
-a reviewed diff, and current affected documentation. Report the outcome, checks,
-and unresolved limitations. HIGH changes remain review-pending until independent
-review is complete; do not present them as merge-ready earlier.
+a reviewed diff, and current affected documentation. In a non-trivial task's plan,
+link updated specs, architecture, usage guides, or ADRs, or explain why relevant
+artifacts are unchanged. At handoff or closure, record the delivered outcome against
+the original criteria, deviations and rationale, evidence, and limitations. Keep
+unrun required checks pending. Do not infer longer-term product success from tests;
+record a follow-up trigger or owner for later measurements when relevant.
+
+Track genuine deferred work using the [follow-up lifecycle](../docs/exec-plans/README.md#follow-ups-and-backlog):
+create `docs/backlog.md` on demand or use the project's existing tracker, link source
+and resolution plans, and record impact, reason deferred, revisit trigger, and status.
+Entries do not authorize additional implementation or external writes. Acceptance
+blockers stay in the active plan; deferral alone cannot complete the agreed scope.
+
+Report the outcome, checks, and unresolved limitations. HIGH changes remain
+review-pending until independent review is complete; do not present them as
+merge-ready earlier.
 
 ## Commit-message suggestions
 

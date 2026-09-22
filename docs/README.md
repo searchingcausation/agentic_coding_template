@@ -7,6 +7,7 @@
 | What should the product do? | [Product specifications](product-specs/README.md) |
 | Why choose this technical direction? | [Design decisions](design-decisions/README.md) |
 | How do I execute or resume a task? | [Execution plans](exec-plans/README.md) |
+| Where do deferred tasks go? | [Follow-up lifecycle](exec-plans/README.md#follow-ups-and-backlog); `docs/backlog.md` when needed, or the project's tracker |
 | How do coding agents work here? | [Working agreement](../agent/README.md) |
 | What principles guide this template? | [Design guide](principles.md) |
 | Where is the complete background report? | [Reference material](references/README.md) |

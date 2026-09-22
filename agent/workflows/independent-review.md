@@ -33,6 +33,14 @@ After recording initial findings, read the plan as a deviation audit. Identify
 unexplained changes and reasonable adjustments; update findings if new evidence
 changes the conclusion without hiding your earlier assumptions.
 
+In this later audit, compare claimed outcomes and phase evidence with the original
+criteria and actual results. Required checks that did not run remain pending;
+technical tests do not establish unobserved product outcomes. Check documentation
+impact against the diff: affected specs and usage guidance must match delivered
+behavior, with a credible reason for relevant artifacts left unchanged. Check that
+genuine follow-ups have traceable entries and that acceptance blockers were not
+silently deferred to make the task appear complete.
+
 ## Report
 
 For each finding, state severity, file/line, trigger, concrete impact, evidence,
