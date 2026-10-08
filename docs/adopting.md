@@ -28,6 +28,49 @@ Specifications, decisions, and task directories are ready for your project's fir
 records. The template includes reusable guidance and templates without pre-filled
 task history.
 
+## Clarify the initial architecture
+
+Before the first implementation that establishes structural boundaries, choose
+an initial architectural direction from the project scope and first relevant spec.
+For an existing project, inspect its code, deployment, and decisions first;
+describe the actual architecture and work within it unless a change is justified
+by the task. For a new project, clarify the constraints before scaffolding fixes
+the structure implicitly.
+
+Use the questions that materially affect the decision:
+
+- What are the core workflows, domain areas, and external integrations?
+- Who develops and operates the system, and what delivery or operating limits apply?
+- What data, consistency, security, availability, and scaling requirements are known?
+- Do parts need independent development, deployment, or scaling? What evidence
+  supports those needs, and what remains an assumption?
+
+Separate compatible decision dimensions instead of treating all architecture
+patterns as mutually exclusive alternatives:
+
+| Dimension | Examples | Decision to explain |
+| --- | --- | --- |
+| System and deployment structure | Monolith, modular monolith, microservices | Which parts run and deploy together, and why? |
+| Code organization | By technical layer, by feature or domain | Where does related code live, and what are the module boundaries? |
+| Dependency rules | Layered, hexagonal, Clean Architecture | Which components may depend on which others, and where are external systems isolated? |
+
+For example, a modular monolith can organize code by feature and use layers inside
+each module. These examples are orientation, not a required menu or a default
+architecture. Compare only a few plausible options, explain their material costs
+and benefits, and recommend the simplest structure that meets the known needs.
+Match the depth to the project: a small application may need only a few paragraphs.
+Ask the user about unresolved constraints when answers would materially change
+the choice. Apply the existing [authorization rules](../agent/README.md#authorization)
+to consequential decisions before implementation.
+
+Record rationale, alternatives, assumptions, decision status, and revisit triggers
+in an [ADR](design-decisions/template.md). A provisional direction is valid when
+its uncertainties are explicit; do not mark a proposal accepted without evidence.
+Describe the chosen structure, module boundaries, and allowed dependencies in
+`ARCHITECTURE.md`, keeping it accurate as implementation takes shape. Revisit the
+direction when evidence or requirements change, rather than deciding every future
+architectural detail at setup.
+
 ## Connect executable evidence
 
 The included Python helpers validate this harness; Python is not a prescribed

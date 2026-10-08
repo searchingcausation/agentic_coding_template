@@ -11,6 +11,12 @@ architecture is selected by this template.
 
 ## Application architecture
 
+Clarify the initial direction using the [setup guide](docs/adopting.md#clarify-the-initial-architecture)
+before implementation establishes structural boundaries. In an existing project,
+start from its actual structure. Record the selected system/deployment structure,
+code organization, and dependency rules as distinct, compatible dimensions, with
+links to their decision records. This template prescribes none of those choices.
+
 Document these as the project takes shape:
 
 - **Components and entry points:** main modules, commands, services, or interfaces.

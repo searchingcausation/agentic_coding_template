@@ -97,6 +97,15 @@ for a review performed in the implementation context.
 
 ## Engineering rules
 
+- Before implementation establishes structural boundaries, inspect the existing
+  architecture or clarify a missing initial direction using the
+  [project setup guide](../docs/adopting.md#clarify-the-initial-architecture).
+  Ground the recommendation in requirements and constraints, compare plausible
+  options, and ask only questions whose answers materially change the choice.
+  Match depth to the project's size and consequences; work within an existing
+  architecture unless the task justifies changing it. Record current structure
+  in `ARCHITECTURE.md` and consequential rationale, assumptions, and revisit
+  triggers in an ADR. Apply the authorization rules above to unresolved choices.
 - Inspect relevant files and `git status` before editing. Use a branch or worktree
   when isolation is useful, and keep the change bounded to the task.
 - For version-sensitive external behavior, establish the actual dependency version
