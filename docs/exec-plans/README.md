@@ -58,6 +58,13 @@ artifact is unchanged. Document supported behavior accurately; retain proposed
 labels for undelivered behavior. Internal refactors need no artificial spec edits.
 Reviewers assess the spec and diff before auditing the implementer's plan.
 
+Clarification questions during a conversation can expose missing definitions,
+examples, or rationale. When the gap is reusable, incorporate the useful explanation
+at the relevant documentation source within the authorized scope. Keep the change
+focused and accurate; a personal learning question alone need not trigger an edit.
+Record material updates in the task's documentation impact and handoff rather than
+copying the conversation into the documentation.
+
 ## Follow-ups and backlog
 
 Create `docs/backlog.md` only when a genuine deferred item appears. If the project
@@ -65,11 +72,25 @@ already uses an issue tracker, link its existing entries instead of maintaining 
 duplicate list; external writes still need applicable authorization. A backlog
 entry is a record of work, not authorization to implement it.
 
+Capture meaningful discoveries from conversations as well as implementation and
+review. Keep current-task questions and acceptance blockers in the active plan;
+use the backlog for genuine deferred topics. Update an existing entry when it
+already covers the discovery. A conversation discovery without a source plan can
+use a short context summary in the source column; do not create a plan solely to
+give it a source link.
+
 Use this format in the backlog, with links relative to that file:
 
 | ID / task | Impact / reason deferred | Source plan | Revisit trigger / owner | Status / resolution |
 | --- | --- | --- | --- | --- |
 | <Stable ID and short description> | <Why it matters and falls outside this delivery> | <Link to discovery and decision context> | <Concrete trigger; owner if known> | <Open, scheduled, done, or dropped; link to implementing plan or decision> |
+
+In the entry or a short note beneath the table keyed by its ID, distinguish a
+confirmed problem, hypothesis, or open decision and record the supporting context.
+When useful, add plausible solution options, their material pros/cons, and a
+recommendation with its rationale. A small topic may need only a few sentences;
+uncertain solutions can remain open with a concrete next investigation step.
+Retain detailed reasoning in its source plan when one exists and link to it.
 
 When planning work in an area, read its relevant entries. If one is selected, link
 it from the new plan, mark it scheduled, and update its status and resolution when

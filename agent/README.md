@@ -157,6 +157,25 @@ and resolution plans, and record impact, reason deferred, revisit trigger, and s
 Entries do not authorize additional implementation or external writes. Acceptance
 blockers stay in the active plan; deferral alone cannot complete the agreed scope.
 
+When a conversation reveals a meaningful potential problem, open question, or
+improvement, capture it in the relevant task plan or, for deferred work, the
+backlog/existing tracker. Distinguish confirmed problems, hypotheses, and open
+decisions. Record the context, potential impact, and next step or revisit trigger.
+Where useful, include plausible solutions, material pros/cons, and a recommendation;
+keep unknowns explicit and the detail proportional to the issue. Reuse existing
+entries rather than duplicating them. Recording a topic does not authorize its
+implementation or external writes.
+
+Treat clarification questions as evidence about documentation usability. When an
+explanation reveals a reusable gap, improve the relevant source documentation as
+part of the authorized work: clarify a term, add a concrete example, or explain
+the rationale where readers need it. Preserve accurate behavior and requirements;
+keep unresolved interpretations explicit. Capture the useful explanation rather
+than the chat transcript, and avoid duplicating guidance or expanding documentation
+for every personal learning question. Mention material documentation updates in
+the handoff. Apply the usual proposal, verification, and authorization rules when
+the improvement requires broader changes.
+
 Report the outcome, checks, and unresolved limitations. HIGH changes remain
 review-pending until independent review is complete; do not present them as
 merge-ready earlier.
