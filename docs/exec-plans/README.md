@@ -58,13 +58,6 @@ artifact is unchanged. Document supported behavior accurately; retain proposed
 labels for undelivered behavior. Internal refactors need no artificial spec edits.
 Reviewers assess the spec and diff before auditing the implementer's plan.
 
-Clarification questions during a conversation can expose missing definitions,
-examples, or rationale. When the gap is reusable, incorporate the useful explanation
-at the relevant documentation source within the authorized scope. Keep the change
-focused and accurate; a personal learning question alone need not trigger an edit.
-Record material updates in the task's documentation impact and handoff rather than
-copying the conversation into the documentation.
-
 ## Follow-ups and backlog
 
 Create `docs/backlog.md` only when a genuine deferred item appears. If the project

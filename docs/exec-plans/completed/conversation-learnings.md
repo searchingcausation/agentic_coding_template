@@ -99,3 +99,10 @@ how consistently the guidance is applied.
 ## Next step
 
 None; completed.
+
+## Subsequent revision — 2026-10-16
+
+At the user's request, removed the clarification-driven documentation improvement
+rule from the shared agreement and execution-plan guide. Automatically revising
+explanations creates unwanted overhead. Conversation discovery and backlog guidance
+remain in place; the earlier outcome above records the original delivery.
